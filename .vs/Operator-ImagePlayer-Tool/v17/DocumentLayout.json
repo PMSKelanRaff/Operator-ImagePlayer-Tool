@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|c:\\users\\kelanrafferty\\source\\repos\\operator-imageplayer-tool\\operator-imageplayer-tool\\resources\\map_template.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\resources\\map_template.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|c:\\users\\kelanrafferty\\source\\repos\\operator-imageplayer-tool\\operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\resources\\map_template.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\resources\\map_template.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,32 +30,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "map_template.html",
               "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Resources\\map_template.html",
               "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\Resources\\map_template.html",
               "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Resources\\map_template.html",
               "RelativeToolTip": "Operator-ImagePlayer-Tool\\Resources\\map_template.html",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADQAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-07-23T11:14:17.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T11:14:17.298Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs",
               "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\Form1.cs",
               "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs",
               "RelativeToolTip": "Operator-ImagePlayer-Tool\\Form1.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAUwIsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwDYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T10:31:40.323Z"
+              "WhenOpened": "2025-07-23T10:31:40.323Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs",
               "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\Form1.cs",

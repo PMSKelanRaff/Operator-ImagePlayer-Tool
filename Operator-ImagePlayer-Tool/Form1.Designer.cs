@@ -34,8 +34,8 @@
             this.pictureBoxRight = new System.Windows.Forms.PictureBox();
             this.btnWriteExif = new System.Windows.Forms.Button();
             this.webViewMap = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.checkBoxShowAllPoints = new System.Windows.Forms.CheckBox();
             this.checkBoxShowAll = new System.Windows.Forms.CheckBox();
+            this.checkBoxAutoPlay = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
@@ -100,13 +100,6 @@
             this.webViewMap.TabIndex = 5;
             this.webViewMap.ZoomFactor = 1D;
             // 
-            // checkBoxShowAllPoints
-            // 
-            this.checkBoxShowAllPoints.Location = new System.Drawing.Point(0, 0);
-            this.checkBoxShowAllPoints.Name = "checkBoxShowAllPoints";
-            this.checkBoxShowAllPoints.Size = new System.Drawing.Size(104, 24);
-            this.checkBoxShowAllPoints.TabIndex = 7;
-            // 
             // checkBoxShowAll
             // 
             this.checkBoxShowAll.AutoSize = true;
@@ -116,15 +109,25 @@
             this.checkBoxShowAll.TabIndex = 6;
             this.checkBoxShowAll.Text = "Show All GPS Points";
             this.checkBoxShowAll.UseVisualStyleBackColor = true;
-            checkBoxShowAll.CheckedChanged += checkBoxShowAll_CheckedChanged;
+            // 
+            // checkBoxAutoPlay
+            // 
+            this.checkBoxAutoPlay.AutoSize = true;
+            this.checkBoxAutoPlay.Location = new System.Drawing.Point(835, 364);
+            this.checkBoxAutoPlay.Name = "checkBoxAutoPlay";
+            this.checkBoxAutoPlay.Size = new System.Drawing.Size(112, 17);
+            this.checkBoxAutoPlay.TabIndex = 8;
+            this.checkBoxAutoPlay.Text = "Auto Loop (5/sec)";
+            this.checkBoxAutoPlay.UseVisualStyleBackColor = true;
+            this.checkBoxAutoPlay.CheckedChanged += new System.EventHandler(this.checkBoxAutoPlay_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 606);
+            this.Controls.Add(this.checkBoxAutoPlay);
             this.Controls.Add(this.checkBoxShowAll);
-            this.Controls.Add(this.checkBoxShowAllPoints);
             this.Controls.Add(this.webViewMap);
             this.Controls.Add(this.btnWriteExif);
             this.Controls.Add(this.pictureBoxRear);
@@ -152,7 +155,7 @@
         private System.Windows.Forms.Button btnWriteExif;
         private Microsoft.Web.WebView2.WinForms.WebView2 webViewMap;
         private System.Windows.Forms.CheckBox checkBoxShowAll;
-        private System.Windows.Forms.CheckBox checkBoxShowAllPoints;
+        private System.Windows.Forms.CheckBox checkBoxAutoPlay;
     }
 }
 

@@ -47,7 +47,7 @@
             clearMarkers();
             var marker = L.marker([lat, lon]).addTo(map).bindPopup(name).openPopup();
             markers.push(marker);
-            map.setView([lat, lon], 18);
+            map.setView([lat, lon], 16);
         };
 
         // Show all markers (from C#)

@@ -21,6 +21,7 @@ namespace Operator_ImagePlayer_Tool
         string folderRear = @"C:\Users\KelanRafferty\Desktop\Operator\WE20240511\N03D120A\N03D120A_REAR";
 
         List<string> imageNames = new List<string>();
+        private Timer autoLoopTimer;
         int currentIndex = 0;
 
         public Form1()
@@ -29,9 +30,12 @@ namespace Operator_ImagePlayer_Tool
             this.Load += Form1_Load;
             this.KeyPreview = true;
             this.KeyDown += Form1_KeyDown;
+            webViewMap.PreviewKeyDown += webViewMap_PreviewKeyDown;
+
             webViewMap.Source = new Uri("file:///C:/path/to/your/image_map.html");
             // Add this for arrow key handling in webViewMap
             webViewMap.PreviewKeyDown += WebViewMap_PreviewKeyDown;
+
         }
 
         private void WebViewMap_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -39,6 +43,14 @@ namespace Operator_ImagePlayer_Tool
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
             {
                 e.IsInputKey = true;  // Important to tell WinForms not to eat these keys
+            }
+        }
+
+        private void webViewMap_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            {
+                e.IsInputKey = true;  // Tell WinForms to treat these as regular input keys
             }
         }
 
@@ -85,11 +97,17 @@ namespace Operator_ImagePlayer_Tool
             this.Focus();
 
             this.KeyPreview = true; // To capture key presses
+
+            autoLoopTimer = new Timer();
+            autoLoopTimer.Interval = 200; // 5 images per second
+            autoLoopTimer.Tick += AutoLoopTimer_Tick;
         }
 
         private async void DisplayImages(int index)
         {
             if (index < 0 || index >= imageNames.Count) return;
+
+            currentIndex = index;
 
             string rowFilename = imageNames[index];
             string distance = ExtractDistance(rowFilename);
@@ -138,7 +156,6 @@ namespace Operator_ImagePlayer_Tool
             }
         }
         
-
         private async Task UpdateMapLocation(double lat, double lon, string name)
         {
             if (webViewMap.CoreWebView2 != null)
@@ -286,6 +303,29 @@ namespace Operator_ImagePlayer_Tool
         private void checkBoxShowAll_CheckedChanged(object sender, EventArgs e)
         {
             DisplayImages(currentIndex); //updates map dynamically
+        }
+
+        private void checkBoxAutoPlay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAutoPlay.Checked)
+            {
+                autoLoopTimer.Start();
+            }
+            else
+            {
+                autoLoopTimer.Stop();
+            }
+        }
+
+        private void AutoLoopTimer_Tick(object sender, EventArgs e)
+        {
+            if (currentIndex >= imageNames.Count)
+            {
+                currentIndex = 0; // Optionally loop back to start
+            }
+
+            DisplayImages(currentIndex);
+            currentIndex++;
         }
     }
 }

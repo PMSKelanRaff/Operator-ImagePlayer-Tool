@@ -41,9 +41,6 @@
             }
         }
 
-        if (points.length > 0) {
-            addMarkers(points);
-        }
 
         // For dynamic updates (e.g., from C#)
         window.updateSingleMarker = function (lat, lon, name) {
@@ -53,6 +50,7 @@
             map.setView([lat, lon], 18);
         };
 
+        // Show all markers (from C#)
         window.showAllMarkers = function () {
             clearMarkers();
             addMarkers(points);

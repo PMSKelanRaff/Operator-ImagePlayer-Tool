@@ -87,57 +87,63 @@ namespace Operator_ImagePlayer_Tool
             this.KeyPreview = true; // To capture key presses
         }
 
-        private void DisplayImages(int index)
+        private async void DisplayImages(int index)
         {
             if (index < 0 || index >= imageNames.Count) return;
 
             string rowFilename = imageNames[index];
             string distance = ExtractDistance(rowFilename);
 
-            string baseName = "N03D120A    "; // Adjust if this changes per project
-
-            // Build expected filenames
+            string baseName = "N03D120A    ";
             string leftFilename = $"{baseName}{distance} 3.JPG";
             string rearFilename = $"{baseName}{distance} 2.JPG";
             string rightFilename = $"{baseName}{distance} 4.JPG";
 
-            // Build full paths
             string pathRow = Path.Combine(folderRow, rowFilename);
             string pathLeft = Path.Combine(folderLeft, leftFilename);
             string pathRight = Path.Combine(folderRight, rightFilename);
             string pathRear = Path.Combine(folderRear, rearFilename);
 
-            // Load images
             pictureBoxRow.Image = LoadIfExists(pathRow);
             pictureBoxLeft.Image = LoadIfExists(pathLeft);
             pictureBoxRight.Image = LoadIfExists(pathRight);
             pictureBoxRear.Image = LoadIfExists(pathRear);
 
-            // Now update the map with GPS for this Row image
             var gps = ExifHelper.GetGpsCoordinates(pathRow);
-            if (gps != null)
+            if (gps == null) return;
+
+            double lat = gps.Value.lat;
+            double lon = gps.Value.lon;
+            string name = Path.GetFileName(pathRow).Replace("'", "");
+
+            if (webViewMap.CoreWebView2 != null)
             {
-                UpdateMapLocation(gps.Value.lat, gps.Value.lon, rowFilename);
+                try
+                {
+                    if (checkBoxShowAll.Checked)
+                    {
+                        // Show all markers and fit map to bounds
+                        await webViewMap.ExecuteScriptAsync("window.showAllMarkers();");
+                    }
+                    else
+                    {
+                        // Clear all markers and show only the current one
+                        await UpdateMapLocation(lat, lon, name);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating map: " + ex.Message);
+                }
             }
         }
+        
 
-        private async void UpdateMapLocation(double lat, double lon, string name)
+        private async Task UpdateMapLocation(double lat, double lon, string name)
         {
             if (webViewMap.CoreWebView2 != null)
             {
-                // JS code to move map and update marker popup:
-                string script = $@"
-            (function() {{
-                if (!window.map) return;
-                var latlng = L.latLng({lat}, {lon});
-                window.map.setView(latlng, 18); // zoom level 18
-
-                if (window.currentMarker) {{
-                    window.currentMarker.setLatLng(latlng).setPopupContent('{name}').openPopup();
-                }} else {{
-                    window.currentMarker = L.marker(latlng).addTo(window.map).bindPopup('{name}').openPopup();
-                }}
-            }})();";
+                string script = $"window.updateSingleMarker({lat}, {lon}, '{name}');";
 
                 try
                 {
@@ -275,6 +281,11 @@ namespace Operator_ImagePlayer_Tool
             File.WriteAllText(tempMapPath, html);
 
             webViewMap.Source = new Uri(tempMapPath);
+        }
+
+        private void checkBoxShowAll_CheckedChanged(object sender, EventArgs e)
+        {
+            DisplayImages(currentIndex); //updates map dynamically
         }
     }
 }

@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
-        html, body, #map { height: 100%; margin: 0; }
+        html, body, #map {
+            height: 100%;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
     <script>
         var map = L.map('map').setView([0, 0], 2);
+        var markers = [];
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
@@ -20,15 +24,39 @@
 
         var points = __DATA__;
 
-        if (points.length > 0) {
+        function clearMarkers() {
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+        }
+
+        function addMarkers(data) {
             var bounds = [];
-            points.forEach(p => {
-                var marker = L.marker([p.lat, p.lon]).addTo(map)
-                    .bindPopup(p.name);
+            data.forEach(p => {
+                var marker = L.marker([p.lat, p.lon]).addTo(map).bindPopup(p.name);
+                markers.push(marker);
                 bounds.push([p.lat, p.lon]);
             });
-            map.fitBounds(bounds);
+            if (bounds.length > 0) {
+                map.fitBounds(bounds);
+            }
         }
+
+        if (points.length > 0) {
+            addMarkers(points);
+        }
+
+        // For dynamic updates (e.g., from C#)
+        window.updateSingleMarker = function (lat, lon, name) {
+            clearMarkers();
+            var marker = L.marker([lat, lon]).addTo(map).bindPopup(name).openPopup();
+            markers.push(marker);
+            map.setView([lat, lon], 18);
+        };
+
+        window.showAllMarkers = function () {
+            clearMarkers();
+            addMarkers(points);
+        };
     </script>
 </body>
 </html>

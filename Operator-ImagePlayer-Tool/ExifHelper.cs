@@ -3,18 +3,24 @@ using System;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 public static class ExifHelper
 {
     public static (double lat, double lon)? GetGpsCoordinates(string imagePath)
     {
-        using (var img = new Bitmap(imagePath))
+        if (!File.Exists(imagePath))
+            return null; // or throw if you prefer
+
+        using (var fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+        using (var img = new Bitmap(fs))
         {
-            PropertyItem[] props = img.PropertyItems;
+            var props = img.PropertyItems;
+
             var latProp = props.FirstOrDefault(p => p.Id == 0x0002); // GPSLatitude
-            var latRef = props.FirstOrDefault(p => p.Id == 0x0001); // GPSLatitudeRef
+            var latRef = props.FirstOrDefault(p => p.Id == 0x0001);  // GPSLatitudeRef
             var lonProp = props.FirstOrDefault(p => p.Id == 0x0004); // GPSLongitude
-            var lonRef = props.FirstOrDefault(p => p.Id == 0x0003); // GPSLongitudeRef
+            var lonRef = props.FirstOrDefault(p => p.Id == 0x0003);  // GPSLongitudeRef
 
             if (latProp == null || latRef == null || lonProp == null || lonRef == null)
                 return null;

@@ -155,7 +155,7 @@ namespace Operator_ImagePlayer_Tool
                 }
             }
         }
-        
+
         private async Task UpdateMapLocation(double lat, double lon, string name)
         {
             if (webViewMap.CoreWebView2 != null)
@@ -327,5 +327,38 @@ namespace Operator_ImagePlayer_Tool
             DisplayImages(currentIndex);
             currentIndex++;
         }
+
+        private void buttonBackNavigate_Click(object sender, EventArgs e)
+        {
+            if (currentIndex > 0)
+            {
+                currentIndex--;
+                DisplayImages(currentIndex);
+            }
+        }
+
+        private void buttonFrontNavigate_Click(object sender, EventArgs e)
+        {
+            if (currentIndex < imageNames.Count - 1)
+            {
+                currentIndex++;
+                DisplayImages(currentIndex);
+            }
+        }
+
+        private void buttonTogglePlay_Click(object sender, EventArgs e)
+        {
+            if (autoLoopTimer.Enabled)
+            {
+                autoLoopTimer.Stop();
+                buttonTogglePlay.Text = "Play";
+            }
+            else
+            {
+                autoLoopTimer.Start();
+                buttonTogglePlay.Text = "Pause";
+            }
+        }
+
     }
 }

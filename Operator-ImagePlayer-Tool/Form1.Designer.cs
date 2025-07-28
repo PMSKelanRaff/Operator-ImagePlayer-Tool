@@ -36,52 +36,61 @@
             this.webViewMap = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.checkBoxShowAll = new System.Windows.Forms.CheckBox();
             this.checkBoxAutoPlay = new System.Windows.Forms.CheckBox();
+            this.buttonBackNavigate = new System.Windows.Forms.Button();
+            this.buttonFrontNavigate = new System.Windows.Forms.Button();
+            this.buttonTogglePlay = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.webViewMap)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxRow
             // 
-            this.pictureBoxRow.Location = new System.Drawing.Point(3, 20);
+            this.pictureBoxRow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxRow.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxRow.Name = "pictureBoxRow";
-            this.pictureBoxRow.Size = new System.Drawing.Size(330, 246);
+            this.pictureBoxRow.Size = new System.Drawing.Size(327, 289);
             this.pictureBoxRow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxRow.TabIndex = 0;
             this.pictureBoxRow.TabStop = false;
             // 
             // pictureBoxRear
             // 
-            this.pictureBoxRear.Location = new System.Drawing.Point(339, 20);
+            this.pictureBoxRear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxRear.Location = new System.Drawing.Point(336, 3);
             this.pictureBoxRear.Name = "pictureBoxRear";
-            this.pictureBoxRear.Size = new System.Drawing.Size(330, 246);
+            this.pictureBoxRear.Size = new System.Drawing.Size(328, 289);
             this.pictureBoxRear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxRear.TabIndex = 1;
             this.pictureBoxRear.TabStop = false;
             // 
             // pictureBoxLeft
             // 
-            this.pictureBoxLeft.Location = new System.Drawing.Point(3, 272);
+            this.pictureBoxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLeft.Location = new System.Drawing.Point(3, 298);
             this.pictureBoxLeft.Name = "pictureBoxLeft";
-            this.pictureBoxLeft.Size = new System.Drawing.Size(330, 272);
+            this.pictureBoxLeft.Size = new System.Drawing.Size(327, 290);
             this.pictureBoxLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLeft.TabIndex = 2;
             this.pictureBoxLeft.TabStop = false;
             // 
             // pictureBoxRight
             // 
-            this.pictureBoxRight.Location = new System.Drawing.Point(339, 272);
+            this.pictureBoxRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxRight.Location = new System.Drawing.Point(336, 298);
             this.pictureBoxRight.Name = "pictureBoxRight";
-            this.pictureBoxRight.Size = new System.Drawing.Size(330, 272);
+            this.pictureBoxRight.Size = new System.Drawing.Size(328, 290);
             this.pictureBoxRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxRight.TabIndex = 3;
             this.pictureBoxRight.TabStop = false;
             // 
             // btnWriteExif
             // 
-            this.btnWriteExif.Location = new System.Drawing.Point(1014, 571);
+            this.btnWriteExif.Location = new System.Drawing.Point(729, 571);
             this.btnWriteExif.Name = "btnWriteExif";
             this.btnWriteExif.Size = new System.Drawing.Size(75, 23);
             this.btnWriteExif.TabIndex = 4;
@@ -121,19 +130,66 @@
             this.checkBoxAutoPlay.UseVisualStyleBackColor = true;
             this.checkBoxAutoPlay.CheckedChanged += new System.EventHandler(this.checkBoxAutoPlay_CheckedChanged);
             // 
+            // buttonBackNavigate
+            // 
+            this.buttonBackNavigate.Location = new System.Drawing.Point(852, 571);
+            this.buttonBackNavigate.Name = "buttonBackNavigate";
+            this.buttonBackNavigate.Size = new System.Drawing.Size(75, 23);
+            this.buttonBackNavigate.TabIndex = 9;
+            this.buttonBackNavigate.Text = "<<";
+            this.buttonBackNavigate.UseVisualStyleBackColor = true;
+            this.buttonBackNavigate.Click += new System.EventHandler(this.buttonBackNavigate_Click);
+            // 
+            // buttonFrontNavigate
+            // 
+            this.buttonFrontNavigate.Location = new System.Drawing.Point(1014, 571);
+            this.buttonFrontNavigate.Name = "buttonFrontNavigate";
+            this.buttonFrontNavigate.Size = new System.Drawing.Size(75, 23);
+            this.buttonFrontNavigate.TabIndex = 10;
+            this.buttonFrontNavigate.Text = ">>";
+            this.buttonFrontNavigate.UseVisualStyleBackColor = true;
+            this.buttonFrontNavigate.Click += new System.EventHandler(this.buttonFrontNavigate_Click);
+            // 
+            // buttonTogglePlay
+            // 
+            this.buttonTogglePlay.Location = new System.Drawing.Point(933, 571);
+            this.buttonTogglePlay.Name = "buttonTogglePlay";
+            this.buttonTogglePlay.Size = new System.Drawing.Size(75, 23);
+            this.buttonTogglePlay.TabIndex = 11;
+            this.buttonTogglePlay.Text = "Play";
+            this.buttonTogglePlay.UseVisualStyleBackColor = true;
+            this.buttonTogglePlay.Click += new System.EventHandler(this.buttonTogglePlay_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxRow, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxRear, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxLeft, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxRight, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(667, 591);
+            this.tableLayoutPanel1.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 606);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.buttonTogglePlay);
+            this.Controls.Add(this.buttonFrontNavigate);
+            this.Controls.Add(this.buttonBackNavigate);
             this.Controls.Add(this.checkBoxAutoPlay);
             this.Controls.Add(this.checkBoxShowAll);
             this.Controls.Add(this.webViewMap);
             this.Controls.Add(this.btnWriteExif);
-            this.Controls.Add(this.pictureBoxRear);
-            this.Controls.Add(this.pictureBoxRow);
-            this.Controls.Add(this.pictureBoxRight);
-            this.Controls.Add(this.pictureBoxLeft);
             this.Name = "Form1";
             this.Text = "Operator-ImagePlayer-Tool";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRow)).EndInit();
@@ -141,6 +197,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.webViewMap)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,6 +213,10 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 webViewMap;
         private System.Windows.Forms.CheckBox checkBoxShowAll;
         private System.Windows.Forms.CheckBox checkBoxAutoPlay;
+        private System.Windows.Forms.Button buttonBackNavigate;
+        private System.Windows.Forms.Button buttonFrontNavigate;
+        private System.Windows.Forms.Button buttonTogglePlay;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

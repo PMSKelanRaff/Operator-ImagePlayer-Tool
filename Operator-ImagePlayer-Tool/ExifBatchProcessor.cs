@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExifLibrary;
 
@@ -32,7 +33,6 @@ namespace EXIF_BatchGPSInserter
 
 
             int total = 0;
-            int imageCounter = 0;
 
             var groupedImages = new Dictionary<double, List<string>>();
 
@@ -98,6 +98,11 @@ namespace EXIF_BatchGPSInserter
             }
         
             return total;
+        }
+
+        public static Task<int> ProcessAsync(string[] camFolders, string rspFile)
+        {
+            return Task.Run(() => Process(camFolders, rspFile));
         }
 
         private static bool HasGpsTags(ImageFile file)

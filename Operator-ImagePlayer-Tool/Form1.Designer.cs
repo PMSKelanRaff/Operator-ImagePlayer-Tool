@@ -35,11 +35,11 @@
             this.btnWriteExif = new System.Windows.Forms.Button();
             this.webViewMap = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.checkBoxShowAll = new System.Windows.Forms.CheckBox();
-            this.checkBoxAutoPlay = new System.Windows.Forms.CheckBox();
             this.buttonBackNavigate = new System.Windows.Forms.Button();
             this.buttonFrontNavigate = new System.Windows.Forms.Button();
             this.buttonTogglePlay = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonLoadProject = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
@@ -90,7 +90,7 @@
             // 
             // btnWriteExif
             // 
-            this.btnWriteExif.Location = new System.Drawing.Point(729, 571);
+            this.btnWriteExif.Location = new System.Drawing.Point(757, 571);
             this.btnWriteExif.Name = "btnWriteExif";
             this.btnWriteExif.Size = new System.Drawing.Size(75, 23);
             this.btnWriteExif.TabIndex = 4;
@@ -112,23 +112,12 @@
             // checkBoxShowAll
             // 
             this.checkBoxShowAll.AutoSize = true;
-            this.checkBoxShowAll.Location = new System.Drawing.Point(691, 363);
+            this.checkBoxShowAll.Location = new System.Drawing.Point(954, 363);
             this.checkBoxShowAll.Name = "checkBoxShowAll";
             this.checkBoxShowAll.Size = new System.Drawing.Size(124, 17);
             this.checkBoxShowAll.TabIndex = 6;
             this.checkBoxShowAll.Text = "Show All GPS Points";
             this.checkBoxShowAll.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAutoPlay
-            // 
-            this.checkBoxAutoPlay.AutoSize = true;
-            this.checkBoxAutoPlay.Location = new System.Drawing.Point(835, 364);
-            this.checkBoxAutoPlay.Name = "checkBoxAutoPlay";
-            this.checkBoxAutoPlay.Size = new System.Drawing.Size(112, 17);
-            this.checkBoxAutoPlay.TabIndex = 8;
-            this.checkBoxAutoPlay.Text = "Auto Loop (5/sec)";
-            this.checkBoxAutoPlay.UseVisualStyleBackColor = true;
-            this.checkBoxAutoPlay.CheckedChanged += new System.EventHandler(this.checkBoxAutoPlay_CheckedChanged);
             // 
             // buttonBackNavigate
             // 
@@ -177,16 +166,26 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(667, 591);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
+            // buttonLoadProject
+            // 
+            this.buttonLoadProject.Location = new System.Drawing.Point(676, 571);
+            this.buttonLoadProject.Name = "buttonLoadProject";
+            this.buttonLoadProject.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoadProject.TabIndex = 13;
+            this.buttonLoadProject.Text = "Load Project";
+            this.buttonLoadProject.UseVisualStyleBackColor = true;
+            this.buttonLoadProject.Click += new System.EventHandler(this.buttonLoadProject_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 606);
+            this.Controls.Add(this.buttonLoadProject);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonTogglePlay);
             this.Controls.Add(this.buttonFrontNavigate);
             this.Controls.Add(this.buttonBackNavigate);
-            this.Controls.Add(this.checkBoxAutoPlay);
             this.Controls.Add(this.checkBoxShowAll);
             this.Controls.Add(this.webViewMap);
             this.Controls.Add(this.btnWriteExif);
@@ -212,11 +211,11 @@
         private System.Windows.Forms.Button btnWriteExif;
         private Microsoft.Web.WebView2.WinForms.WebView2 webViewMap;
         private System.Windows.Forms.CheckBox checkBoxShowAll;
-        private System.Windows.Forms.CheckBox checkBoxAutoPlay;
         private System.Windows.Forms.Button buttonBackNavigate;
         private System.Windows.Forms.Button buttonFrontNavigate;
         private System.Windows.Forms.Button buttonTogglePlay;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button buttonLoadProject;
     }
 }
 

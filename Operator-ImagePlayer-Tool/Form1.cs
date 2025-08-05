@@ -15,10 +15,12 @@ namespace Operator_ImagePlayer_Tool
 {
     public partial class Form1 : Form
     {
-        string folderRow = @"C:\Users\KelanRafferty\Desktop\Operator\WE20240511\N03D120A\N03D120A_ROW";
-        string folderLeft = @"C:\Users\KelanRafferty\Desktop\Operator\WE20240511\N03D120A\N03D120A_LEFT";
-        string folderRight = @"C:\Users\KelanRafferty\Desktop\Operator\WE20240511\N03D120A\N03D120A_RIGHT";
-        string folderRear = @"C:\Users\KelanRafferty\Desktop\Operator\WE20240511\N03D120A\N03D120A_REAR";
+
+        string folderRow;
+        string folderLeft;
+        string folderRight;
+        string folderRear;
+        private string folderBase;
 
         List<string> imageNames = new List<string>();
         private Timer autoLoopTimer;
@@ -36,6 +38,35 @@ namespace Operator_ImagePlayer_Tool
             // Add this for arrow key handling in webViewMap
             webViewMap.PreviewKeyDown += WebViewMap_PreviewKeyDown;
 
+            //disable buttons until project is loaded
+            buttonTogglePlay.Enabled = false;
+            buttonBackNavigate.Enabled = false;
+            buttonFrontNavigate.Enabled = false;
+
+            //initialise timer
+            autoLoopTimer = new Timer();
+            autoLoopTimer.Interval = 200; // 5 images per second
+            autoLoopTimer.Tick += AutoLoopTimer_Tick;
+
+        }
+
+        private void LoadImageList()
+        {
+            var files = Directory.GetFiles(folderRow, "*.JPG");
+            imageNames = files.Select(Path.GetFileName)
+                              .OrderBy(f => f)
+                              .ToList();
+
+            if (imageNames.Count > 0)
+            {
+                currentIndex = 0;
+                DisplayImages(currentIndex);
+                ShowGpsMap(files.ToList());
+            }
+            else
+            {
+                MessageBox.Show("No images found in ROW folder.");
+            }
         }
 
         private void WebViewMap_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -80,6 +111,12 @@ namespace Operator_ImagePlayer_Tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(folderRow) || !Directory.Exists(folderRow))
+            {
+                MessageBox.Show("ROW folder not set or does not exist. Please load a project first.");
+                return;
+            }
+
             var files = Directory.GetFiles(folderRow, "*.JPG");
 
             imageNames = files
@@ -91,16 +128,16 @@ namespace Operator_ImagePlayer_Tool
             {
                 DisplayImages(currentIndex);
             }
+            else
+            {
+                MessageBox.Show("No images found in ROW folder.");
+            }
 
             List<string> allImages = Directory.GetFiles(folderRow, "*.JPG").ToList();
             ShowGpsMap(allImages);
             this.Focus();
 
             this.KeyPreview = true; // To capture key presses
-
-            autoLoopTimer = new Timer();
-            autoLoopTimer.Interval = 200; // 5 images per second
-            autoLoopTimer.Tick += AutoLoopTimer_Tick;
         }
 
         private async void DisplayImages(int index)
@@ -112,7 +149,7 @@ namespace Operator_ImagePlayer_Tool
             string rowFilename = imageNames[index];
             string distance = ExtractDistance(rowFilename);
 
-            string baseName = "N03D120A    ";
+            string baseName = Path.GetFileName(folderBase) + "    ";  // Adds four spaces
             string leftFilename = $"{baseName}{distance} 3.JPG";
             string rearFilename = $"{baseName}{distance} 2.JPG";
             string rightFilename = $"{baseName}{distance} 4.JPG";
@@ -220,7 +257,7 @@ namespace Operator_ImagePlayer_Tool
             }
         }
 
-        private void btnWriteExif_Click(object sender, EventArgs e)
+        private async void btnWriteExif_Click(object sender, EventArgs e)
         {
             string rspPath = string.Empty;
 
@@ -258,14 +295,23 @@ namespace Operator_ImagePlayer_Tool
             btnWriteExif.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
 
-            int updatedCount = ExifBatchProcessor.Process(camFolders, rspPath);
+            try
+            {
+                int updatedCount = await ExifBatchProcessor.ProcessAsync(camFolders, rspPath);
+                MessageBox.Show($"{updatedCount} images were updated with GPS EXIF data.");
 
-            Cursor.Current = Cursors.Default;
-            btnWriteExif.Enabled = true;
-
-            MessageBox.Show($"{updatedCount} images were updated with GPS EXIF data.");
-            List<string> allImages = Directory.GetFiles(folderRow, "*.JPG").ToList();
-            ShowGpsMap(allImages);
+                List<string> allImages = Directory.GetFiles(folderRow, "*.JPG").ToList();
+                ShowGpsMap(allImages);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during EXIF processing: {ex.Message}");
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+                btnWriteExif.Enabled = true;
+            }
         }
 
         private void ShowGpsMap(List<string> imagePaths)
@@ -303,18 +349,6 @@ namespace Operator_ImagePlayer_Tool
         private void checkBoxShowAll_CheckedChanged(object sender, EventArgs e)
         {
             DisplayImages(currentIndex); //updates map dynamically
-        }
-
-        private void checkBoxAutoPlay_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxAutoPlay.Checked)
-            {
-                autoLoopTimer.Start();
-            }
-            else
-            {
-                autoLoopTimer.Stop();
-            }
         }
 
         private void AutoLoopTimer_Tick(object sender, EventArgs e)
@@ -360,5 +394,41 @@ namespace Operator_ImagePlayer_Tool
             }
         }
 
+        private void buttonLoadProject_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new FolderBrowserDialog())
+            {
+                dialog.Description = "Select a project folder (e.g., N03D120A)";
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    folderBase = dialog.SelectedPath;
+                    string projectName = Path.GetFileName(folderBase);
+
+                    folderRow = Path.Combine(folderBase, projectName + "_ROW");
+                    folderLeft = Path.Combine(folderBase, projectName + "_LEFT");
+                    folderRight = Path.Combine(folderBase, projectName + "_RIGHT");
+                    folderRear = Path.Combine(folderBase, projectName + "_REAR");
+
+                    if (Directory.Exists(folderRow) &&
+                        Directory.Exists(folderLeft) &&
+                        Directory.Exists(folderRight) &&
+                        Directory.Exists(folderRear))
+                    {
+                        LoadImageList();
+
+                        // Enable controls now that project and images are loaded
+                        buttonTogglePlay.Enabled = true;
+                        buttonBackNavigate.Enabled = true;
+                        buttonFrontNavigate.Enabled = true;
+                        btnWriteExif.Enabled = true; // If you want to enable EXIF writing here
+                    }
+                    else
+                    {
+                        MessageBox.Show("One or more camera folders are missing.");
+                    }
+                }
+            }
+        }
+    
     }
 }

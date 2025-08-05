@@ -6,7 +6,21 @@
       "padded_top_topics_start_index": 0,
       "taxonomy_version": 0,
       "top_topics_and_observing_domains": [  ]
+   }, {
+      "calculation_time": "13398190359458685",
+      "config_version": 0,
+      "model_version": "0",
+      "padded_top_topics_start_index": 0,
+      "taxonomy_version": 0,
+      "top_topics_and_observing_domains": [  ]
+   }, {
+      "calculation_time": "13398855779875822",
+      "config_version": 0,
+      "model_version": "0",
+      "padded_top_topics_start_index": 0,
+      "taxonomy_version": 0,
+      "top_topics_and_observing_domains": [  ]
    } ],
    "hex_encoded_hmac_key": "DC519277F7581DB20F9255972C4252EF42D66D80C275BCD729C8AAF5D65BDD65",
-   "next_scheduled_calculation_time": "13398183722218484"
+   "next_scheduled_calculation_time": "13399460579875835"
 }

@@ -36,9 +36,10 @@
               "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\ExifBatchProcessor.cs",
               "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\ExifBatchProcessor.cs",
               "RelativeToolTip": "Operator-ImagePlayer-Tool\\ExifBatchProcessor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T09:40:50.121Z"
+              "WhenOpened": "2025-07-28T09:40:50.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,7 +49,7 @@
               "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\Form1.cs",
               "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs",
               "RelativeToolTip": "Operator-ImagePlayer-Tool\\Form1.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAIwL8AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAUwI0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T10:31:40.323Z",
               "EditorCaption": ""
@@ -62,7 +63,8 @@
               "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs [Design]",
               "RelativeToolTip": "Operator-ImagePlayer-Tool\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T10:21:24.403Z"
+              "WhenOpened": "2025-07-23T10:21:24.403Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

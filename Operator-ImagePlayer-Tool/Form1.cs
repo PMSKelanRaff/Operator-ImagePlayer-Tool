@@ -25,6 +25,7 @@ namespace Operator_ImagePlayer_Tool
         List<string> imageNames = new List<string>();
         private Timer autoLoopTimer;
         int currentIndex = 0;
+        private static bool hasRunOnce = false;
 
         public Form1()
         {
@@ -111,9 +112,23 @@ namespace Operator_ImagePlayer_Tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Only show the folder check message after the first run
+            if (hasRunOnce)
+            {
+                if (string.IsNullOrEmpty(folderRow) || !Directory.Exists(folderRow))
+                {
+                    MessageBox.Show("ROW folder not set or does not exist. Please load a project first.");
+                    return;
+                }
+            }
+            else
+            {
+                hasRunOnce = true; // Mark the first run as complete
+            }
+
+            // Validate folderRow before continuing
             if (string.IsNullOrEmpty(folderRow) || !Directory.Exists(folderRow))
             {
-                MessageBox.Show("ROW folder not set or does not exist. Please load a project first.");
                 return;
             }
 
@@ -135,9 +150,9 @@ namespace Operator_ImagePlayer_Tool
 
             List<string> allImages = Directory.GetFiles(folderRow, "*.JPG").ToList();
             ShowGpsMap(allImages);
-            this.Focus();
 
-            this.KeyPreview = true; // To capture key presses
+            this.Focus();
+            this.KeyPreview = true; // Capture key presses
         }
 
         private async void DisplayImages(int index)

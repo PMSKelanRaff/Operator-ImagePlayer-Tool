@@ -44,6 +44,9 @@
     <Reference Include="AWSSDK.S3, Version=4.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\packages\AWSSDK.S3.4.0.6.3\lib\net472\AWSSDK.S3.dll</HintPath>
     </Reference>
+    <Reference Include="AWSSDK.SecurityToken, Version=4.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecurityToken.4.0.1.8\lib\net472\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
     <Reference Include="ExifLibrary, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ExifLibrary.1.0.13\lib\netstandard1.3\ExifLibrary.dll</HintPath>
     </Reference>
@@ -226,6 +229,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AwsUserConfig.cs" />
     <Compile Include="ExifBatchProcessor.cs" />
     <Compile Include="ExifHelper.cs" />
     <Compile Include="Form1.cs">
@@ -249,6 +253,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="aws_config.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -271,6 +276,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.4.0.6.3\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.S3.4.0.6.3\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+    <Analyzer Include="..\packages\AWSSDK.SecurityToken.4.0.1.8\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3351.48\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3351.48\build\Microsoft.Web.WebView2.targets')" />

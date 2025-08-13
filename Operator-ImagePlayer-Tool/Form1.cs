@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EXIF_BatchGPSInserter;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+using Amazon;
+using Amazon.S3;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using System.Text.Json;
+using Amazon.S3.Model;
 
 namespace Operator_ImagePlayer_Tool
 {
@@ -444,6 +449,74 @@ namespace Operator_ImagePlayer_Tool
                 }
             }
         }
-    
+
+        private async Task<AmazonS3Client> ConnectToS3Async()
+        {
+            try
+            {
+                string configPath = Path.Combine(Application.StartupPath, "aws_config.json");
+
+                if (!File.Exists(configPath))
+                {
+                    MessageBox.Show("AWS config file not found: " + configPath);
+                    return null;
+                }
+
+                string json = File.ReadAllText(configPath);
+                var userConfig = JsonSerializer.Deserialize<AwsUserConfig>(json);
+
+                // 1. Base credentials
+                var baseCredentials = new BasicAWSCredentials(userConfig.AccessKey, userConfig.SecretKey);
+
+                // 2. Create STS client
+                var stsClient = new AmazonSecurityTokenServiceClient(baseCredentials, RegionEndpoint.GetBySystemName(userConfig.Region));
+
+                // 3. Assume the PMS read-only role
+                var assumeRoleRequest = new AssumeRoleRequest
+                {
+                    RoleArn = userConfig.RoleArn,
+                    RoleSessionName = "ImageViewerSession"
+                };
+
+                var response = await stsClient.AssumeRoleAsync(assumeRoleRequest);
+                var creds = response.Credentials;
+
+                // 4. Create S3 client with temporary credentials
+                var tempCredentials = new SessionAWSCredentials(
+                    creds.AccessKeyId,
+                    creds.SecretAccessKey,
+                    creds.SessionToken
+                );
+
+                return new AmazonS3Client(tempCredentials, RegionEndpoint.GetBySystemName(userConfig.Region));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to connect to AWS: " + ex.Message);
+                return null;
+            }
+        }
+
+        private async void buttonLoadFromAws_Click(object sender, EventArgs e)
+        {
+            var s3Client = await ConnectToS3Async();
+
+            if (s3Client == null)
+                return;
+
+            // Example: list folders from S3 bucket
+            var listRequest = new ListObjectsV2Request
+            {
+                BucketName = "your-bucket-name",
+                Prefix = "projects/",
+                Delimiter = "/"
+            };
+
+            var listResponse = await s3Client.ListObjectsV2Async(listRequest);
+            var folders = listResponse.CommonPrefixes;
+
+            // Display or use folders as needed
+            MessageBox.Show("Found projects: " + string.Join("\n", folders));
+        }
     }
 }

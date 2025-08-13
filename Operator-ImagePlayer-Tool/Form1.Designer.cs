@@ -40,6 +40,7 @@
             this.buttonTogglePlay = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonLoadProject = new System.Windows.Forms.Button();
+            this.buttonLoadFromAws = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeft)).BeginInit();
@@ -90,7 +91,7 @@
             // 
             // btnWriteExif
             // 
-            this.btnWriteExif.Location = new System.Drawing.Point(757, 571);
+            this.btnWriteExif.Location = new System.Drawing.Point(676, 542);
             this.btnWriteExif.Name = "btnWriteExif";
             this.btnWriteExif.Size = new System.Drawing.Size(75, 23);
             this.btnWriteExif.TabIndex = 4;
@@ -176,11 +177,22 @@
             this.buttonLoadProject.UseVisualStyleBackColor = true;
             this.buttonLoadProject.Click += new System.EventHandler(this.buttonLoadProject_Click);
             // 
+            // buttonLoadFromAws
+            // 
+            this.buttonLoadFromAws.Location = new System.Drawing.Point(754, 571);
+            this.buttonLoadFromAws.Name = "buttonLoadFromAws";
+            this.buttonLoadFromAws.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoadFromAws.TabIndex = 14;
+            this.buttonLoadFromAws.Text = "Load AWS";
+            this.buttonLoadFromAws.UseVisualStyleBackColor = true;
+            this.buttonLoadFromAws.Click += new System.EventHandler(this.buttonLoadFromAws_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 606);
+            this.Controls.Add(this.buttonLoadFromAws);
             this.Controls.Add(this.buttonLoadProject);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonTogglePlay);
@@ -216,6 +228,7 @@
         private System.Windows.Forms.Button buttonTogglePlay;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button buttonLoadProject;
+        private System.Windows.Forms.Button buttonLoadFromAws;
     }
 }
 

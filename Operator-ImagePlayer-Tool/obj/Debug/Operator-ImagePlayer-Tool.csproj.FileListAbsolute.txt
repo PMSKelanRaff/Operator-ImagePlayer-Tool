@@ -46,3 +46,6 @@ C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlay
 C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\System.Text.Json.xml
 C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\System.ValueTuple.xml
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\AWSSDK.SecurityToken.dll
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\AWSSDK.SecurityToken.pdb
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\AWSSDK.SecurityToken.xml

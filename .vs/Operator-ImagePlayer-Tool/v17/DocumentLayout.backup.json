@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|c:\\users\\kelanrafferty\\source\\repos\\operator-imageplayer-tool\\operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\awsuserconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\awsuserconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|c:\\users\\kelanrafferty\\source\\repos\\operator-imageplayer-tool\\operator-imageplayer-tool\\awsauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\awsauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\operator-imageplayer-tool\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{345615BD-1FD2-450E-A8E7-D906D8B76E98}|Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool.csproj|solutionrelative:operator-imageplayer-tool\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,27 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AwsUserConfig.cs",
-              "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\AwsUserConfig.cs",
-              "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\AwsUserConfig.cs",
-              "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\AwsUserConfig.cs",
-              "RelativeToolTip": "Operator-ImagePlayer-Tool\\AwsUserConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\LoginForm.cs",
+              "RelativeToolTip": "Operator-ImagePlayer-Tool\\LoginForm.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T09:57:17.029Z"
+              "WhenOpened": "2025-08-13T08:48:56.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs",
-              "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\Form1.cs",
-              "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs [Design]",
-              "RelativeToolTip": "Operator-ImagePlayer-Tool\\Form1.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\LoginForm.cs [Design]",
+              "RelativeToolTip": "Operator-ImagePlayer-Tool\\LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T09:37:04.974Z",
+              "WhenOpened": "2025-08-13T08:48:43.037Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AWSAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\AWSAuthService.cs",
+              "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\AWSAuthService.cs",
+              "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\AWSAuthService.cs",
+              "RelativeToolTip": "Operator-ImagePlayer-Tool\\AWSAuthService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA1wD8AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T08:43:22.192Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,7 +78,7 @@
               "RelativeDocumentMoniker": "Operator-ImagePlayer-Tool\\Form1.cs",
               "ToolTip": "C:\\Users\\KelanRafferty\\source\\repos\\Operator-ImagePlayer-Tool\\Operator-ImagePlayer-Tool\\Form1.cs",
               "RelativeToolTip": "Operator-ImagePlayer-Tool\\Form1.cs",
-              "ViewState": "AgIAAFABAAAAAAAAAAA0wMQBAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOsBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T10:31:40.323Z",
               "EditorCaption": ""

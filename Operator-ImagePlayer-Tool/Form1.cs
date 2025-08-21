@@ -18,6 +18,7 @@ using Amazon.S3.Model;
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentity;
+using System.Diagnostics;
 
 namespace Operator_ImagePlayer_Tool
 {
@@ -491,5 +492,40 @@ namespace Operator_ImagePlayer_Tool
             }
         }
 
+        private void buttonStitch_Click(object sender, EventArgs e)
+        {
+            if (pictureBoxLeft.Image == null || pictureBoxRight.Image == null)
+            {
+                MessageBox.Show("Left or Right image not loaded.");
+                return;
+            }
+
+            try
+            {
+                Bitmap stitchedBmp = ImageStitcher.StitchImages(pictureBoxRight.Image, pictureBoxLeft.Image);
+
+                Debug.WriteLine($"Left image size: {pictureBoxLeft.Image.Width}x{pictureBoxLeft.Image.Height}");
+                Debug.WriteLine($"Right image size: {pictureBoxRight.Image.Width}x{pictureBoxRight.Image.Height}");
+
+                // show stitched image in a popup form
+                Form preview = new Form();
+                preview.Text = "Stitched Image";
+                preview.Size = new Size(800, 600);
+
+                PictureBox pb = new PictureBox
+                {
+                    Dock = DockStyle.Fill,
+                    Image = stitchedBmp,
+                    SizeMode = PictureBoxSizeMode.Zoom
+                };
+
+                preview.Controls.Add(pb);
+                preview.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Stitching failed: " + ex.Message);
+            }
+        }
     }
 }

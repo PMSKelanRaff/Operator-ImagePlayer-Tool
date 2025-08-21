@@ -56,3 +56,14 @@ C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlay
 C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\obj\Debug\Operator.A1D0B935.Up2Date
 C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\obj\Debug\Operator-ImagePlayer-Tool.exe
 C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\obj\Debug\Operator-ImagePlayer-Tool.pdb
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\OpenCvSharp.dll
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\OpenCvSharp.xml
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\System.Drawing.Common.dll
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\System.Drawing.Common.pdb
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\System.Drawing.Common.xml
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\dll\x86\opencv_videoio_ffmpeg4110.dll
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\KelanRafferty\source\repos\Operator-ImagePlayer-Tool\Operator-ImagePlayer-Tool\bin\Debug\dll\x64\opencv_videoio_ffmpeg4110_64.dll

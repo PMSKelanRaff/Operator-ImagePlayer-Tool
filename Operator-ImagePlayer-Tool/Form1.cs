@@ -502,7 +502,7 @@ namespace Operator_ImagePlayer_Tool
 
             try
             {
-                Bitmap stitchedBmp = ImageStitcher.StitchImages(pictureBoxRight.Image, pictureBoxLeft.Image);
+                Bitmap stitchedBmp = ImageStitcher.StitchImages(pictureBoxLeft.Image, pictureBoxRight.Image);
 
                 Debug.WriteLine($"Left image size: {pictureBoxLeft.Image.Width}x{pictureBoxLeft.Image.Height}");
                 Debug.WriteLine($"Right image size: {pictureBoxRight.Image.Width}x{pictureBoxRight.Image.Height}");
